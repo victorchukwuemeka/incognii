@@ -2,7 +2,7 @@
   <div class="container mx-auto px-4">
     <div class="flex justify-between items-center">
       <div>
-        <a href="/" class="btn btn-ghost text-xl">Incognii</a>
+        <a href="/" class="btn btn-ghost text-white text-xl">Incognii</a>
       </div>
       @guest
       <div class="flex items-center space-x-8">
@@ -11,9 +11,16 @@
       </div>
       @else
       <div class="items-center space-x-8">
-        <a href="{{ route('exit') }}" class="text-gray-300 hover:text-white">
-          Bye, leave the matrix
-        </a>
+        <div class="flex space-x-4">
+          <a href="{{ route('profile',['id' => auth()->user()->id]) }}">
+              <p class="text-gray-300 hover:text-white">
+                Welcome, {{ auth()->user()->alias }}!
+              </p>
+          </a>
+          <a href="{{ route('exit') }}" class="text-gray-300 hover:text-white">
+            Bye, leave the matrix
+          </a>
+        </div>
       </div>
       @endguest
     </div>

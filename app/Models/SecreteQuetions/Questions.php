@@ -5,6 +5,11 @@ namespace App\Models\SecreteQuetions;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Models\SecreteQuetions\Answers;
+use App\Models\User;
+
+
 
 class Questions extends Model
 {
@@ -20,6 +25,11 @@ class Questions extends Model
     public function answers(): HasMany
     {
       return $this->hasMany(Answers::class);
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
     }
 
 }

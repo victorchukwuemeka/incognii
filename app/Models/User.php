@@ -5,7 +5,13 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Notifications\Notifiable;
+use App\Models\SecreteQuetions\Answers;
+use App\Models\SecreteQuetions\Questions;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
+
+
 
 class User extends Authenticatable
 {
@@ -44,4 +50,22 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function questions(): HasMany
+    {
+        return $this->hasMany(Questions::class);
+    }
+
+
+    public function answers():HasMany
+    {
+      return $this->hasMany(Answers::class);
+    }
+
+    public function image(): MorphOne
+    {
+       return $this->morphOne(Image::class, 'imageable');
+    }
+
+    
 }

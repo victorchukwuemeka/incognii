@@ -10,11 +10,7 @@ use App\Models\SecreteQuetions\Questions;
 
 class QuestionsController extends Controller
 {
-    public function create()
-    {
-      return view('questions.ask-questions');
-    }
-
+    
     public function store(Request $request){
 
       //check if the user is in session

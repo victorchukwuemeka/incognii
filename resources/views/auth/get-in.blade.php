@@ -5,11 +5,11 @@
   @if(session('status'))
        <p>{{ session('status') }}</p>
    @endif
-<div class="hero min-h-screen bg-base-200">
+<div class="hero  bg-gray-900  min-h-screen bg-base-200">
   <div class="hero-content flex-col lg:flex-row-reverse">
     <div class="text-center lg:text-left">
-      <h1 class="text-5xl font-bold">Put Your Token</h1>
-      <p class="py-6">Use the token you got to access  the  platform ,
+      <h1 class="text-5xl text-gray-400 font-bold">Put Your Token</h1>
+      <p class="py-6 text-gray-300">Use the token you got to access  the  platform ,
         and make sure you copy and save the token for future use.
         </p>
     </div>
@@ -27,7 +27,7 @@
           </label>
         </div>
         <div class="form-control mt-6">
-          <button class="btn btn-primary">Summit Token</button>
+          <button class="btn btn-neutral">Summit Token</button>
         </div>
       </form>
     </div>
