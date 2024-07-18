@@ -1,13 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="bg-gray-900  h-full text-white py-16">
+<div class="bg-gray-900  min-h-screen text-white py-16">
   <div class="container mx-auto px-4">
     <div class="text-center mb-12">
       <h1 class="text-4xl font-bold tracking-wide">
         {{ __("Incognii is a place where you can share your dark secrets without stigma or discrimination of any kind, because your identity is hidden. In this platform, all manner of questions are accepted, no matter what or who you are.") }}
       </h1>
     </div>
+
     <div class="flex justify-center space-x-8">
       <a href="{{route('question')}}" class="w-1/2 max-w-xs rounded-lg
       shadow-md bg-gray-800  hover:bg-gray-700
